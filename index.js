@@ -18,6 +18,7 @@ for (const file of commandFiles) {
 
 // message event
 client.on('message', message => {
+  // delete a message if it contains a forbidden word
   forbiddenWords.forEach(word => {
     if (message.content.toLowerCase().includes(word)) {
       message.delete()
@@ -43,8 +44,6 @@ client.on('message', message => {
     message.reply('Une erreur s\'est produite.')
   }
 })
-
-// =======================================================================================================
 
 // logs the bot
 client.login(token)
